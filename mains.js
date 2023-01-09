@@ -14,9 +14,9 @@ function addTable(event) {
 	tables.push(chair);
 	localStorage.setItem('tables', JSON.stringify(tables));
 	tableInput.value = '';
-	renderTasks();
+	rendertables();
 }
-function renderTasks() {
+function rendertables() {
 	tableList.innerHTML = '';
 	for (let i = 0; i < tables.length; i++) {
 		const chair = tables[i];
@@ -28,7 +28,7 @@ function renderTasks() {
           ${chair.text}
         </label>
         <button type="button" id="delete-${chair.id}" 
-        onclick="deleteTask(${chair.id})">Delete</button>
+        onclick="deleteTables(${chair.id})">Delete</button>
       `;
 
 		li.className = chair.completed ? 'completed' : 'not-completed';
@@ -38,23 +38,23 @@ function renderTasks() {
 }
 function toggleCompletion(id) {
 	for (let i = 0; i < tables.length; i++) {
-		const currentTask = tables[i];
+		const currentChair = tables[i];
 		if (tables[i].id === id) {
-			currentTask.completed = !currentTask.completed;
+			currentChair.completed = !currentChair.completed;
 		}
 	}
 }
-function deleteTask(id) {
+function deleteTables(id) {
 	const chairIndex = tables.findIndex(function (chair) {
 		return chair.id === id;
 	});
 	if (chairIndex !== -1 && tables[chairIndex].completed) {
 		tables.splice(chairIndex, 1);
-		localStorage.setItem('tasks', JSON.stringify(tables));
-		renderTasks();
+		localStorage.setItem('tables', JSON.stringify(tables));
+		rendertables();
 	} else {
 		alert('Not Completed, please complete the task!');
 	}
 }
 tableForm.addEventListener('submit', addTable);
-renderTasks();
+rendertables();
