@@ -1,0 +1,33 @@
+* {
+	background-color: rgb(205, 237, 228);
+}
+#title {
+	color: rgb(128, 147, 141);
+	font-family: 'Rubik 80s Fade', cursive;
+	font-size: 40px;
+}
+#tableInput {
+	margin-right: 20%;
+}
+#button {
+	background-color: black;
+	color: azure;
+	font-family: 'Rubik 80s Fade', cursive;
+	cursor: pointer;
+}
+
+button[type='button'] {
+	background-color: rgb(217, 23, 23);
+	color: azure;
+	font-family: 'Rubik 80s Fade', cursive;
+	cursor: pointer;
+	margin-left: 9.5%;
+	display: block;
+	margin-top: -2%;
+	margin-bottom: 1%;
+}
+#label {
+	font-family: 'Rubik 80s Fade', cursive;
+	cursor: pointer;
+	font-size: 20px;
+}
